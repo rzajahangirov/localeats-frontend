@@ -1,0 +1,303 @@
+/* ============================================
+   PendingPage Styles
+   ============================================ */
+
+.pending-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--bg-cream) 0%, var(--bg-blush) 50%, var(--bg-cream) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Background Decorative Elements */
+.pending-bg-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.bg-circle-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-accent-rose) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.bg-circle-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--color-accent-coral) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+.bg-circle-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--color-primary-light) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 6s ease-in-out infinite 1s;
+}
+
+/* Card */
+.pending-card {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 3rem 3.5rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pending-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Icon */
+.pending-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.pending-icon-ring {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-badge);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.pending-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.pending-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-circle-dashed {
+  animation: spin 20s linear infinite;
+  transform-origin: center;
+}
+
+.icon-check {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: checkmark 0.8s ease 0.5s forwards;
+}
+
+/* Badge */
+.pending-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FEF3C7;
+  color: #92400E;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F59E0B;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Title */
+.pending-title {
+  font-family: var(--font-primary);
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.pending-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+/* Description */
+.pending-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+/* Info Cards */
+.pending-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: left;
+  transition: all var(--transition-base);
+}
+
+.info-card:hover {
+  border-color: var(--border-input);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-badge);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.info-card-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+}
+
+.info-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-title {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-card-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Divider */
+.pending-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Footer */
+.pending-footer {
+  margin-bottom: 1.5rem;
+}
+
+.pending-footer-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.pending-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.pending-contact-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.pending-contact-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Branding */
+.pending-branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.brand-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.brand-text {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 560px) {
+  .pending-card {
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .pending-title {
+    font-size: 1.5rem;
+  }
+
+  .pending-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

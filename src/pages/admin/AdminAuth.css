@@ -1,0 +1,211 @@
+/* Admin Portal Auth CSS Suite */
+.admin-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0F172A; /* Slate 900 */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.8) 0px, transparent 50%);
+  padding: 2rem;
+  color: #F8FAFC; /* Slate 50 */
+}
+
+/* Base Panel */
+.admin-auth-panel {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(30, 41, 59, 0.7); /* Slate 800 */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 3.5rem 3rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.admin-auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.admin-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  color: #38BDF8; /* Sky 400 */
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.2);
+}
+
+.admin-logo svg {
+  width: 24px;
+  height: 24px;
+}
+
+.admin-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+  font-size: 0.95rem;
+  color: #94A3B8; /* Slate 400 */
+  letter-spacing: 0.2px;
+}
+
+/* Form Styles */
+.admin-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.admin-form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #94A3B8;
+  margin-bottom: 0.5rem;
+}
+
+.admin-input-wrapper {
+  position: relative;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.5rem;
+  color: #F8FAFC;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.admin-input::placeholder {
+  color: #64748B;
+}
+
+.admin-input:focus {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.admin-input.error {
+  border-color: #EF4444;
+}
+
+.admin-field-error {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #EF4444;
+}
+
+/* Error Alert */
+.admin-error-box {
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 3px solid #EF4444;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #FCA5A5;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+/* Button */
+.admin-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #38BDF8;
+  color: #0F172A;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.admin-submit-btn:hover {
+  background: #7DD3FC;
+  transform: translateY(-1px);
+}
+
+.admin-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-submit-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.admin-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(15, 23, 42, 0.2);
+  border-bottom-color: #0F172A;
+  border-radius: 50%;
+  display: inline-block;
+  animation: adminSpin 1s linear infinite;
+}
+
+@keyframes adminSpin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Footer Link */
+.admin-auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #94A3B8;
+}
+
+.admin-link {
+  color: #38BDF8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.admin-link:hover {
+  color: #BAE6FD;
+  text-decoration: underline;
+}
